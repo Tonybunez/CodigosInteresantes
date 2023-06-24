@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@600&display=swap');
+h1,h2,h3,h4,p{
+  margin:0px;
+  padding:0px;
+}
+body{
+  background-color:#17004C;
+  color:white;
+  font-family: 'Ysabeau SC', sans-serif;
+  position: relative;
+  z-index:1;
+
+}
+.listaTienda__menu{
+  list-style:none;
+  position: relative;
+}
+
+.listaTienda__item {
+  padding: 15px;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2; /* Cambiado a un valor mayor */
+}
+
+/* Etiqueta a */
+.listaTienda__link{
+  color: black;;
+  font-size:1rem;
+  padding:10px;
+  border-radius: 8px;
+  position: relative; /* Relative respecto a etiqueta a */
+  background-color: #F1C40F;
+}
+
+.listaTienda__link:hover{
+    color:black;
+    position: relative;
+}
+
+/* POPOUT */
+.link__popout--active, .link__popout--desactivate {
+  position: absolute;
+  right:0;
+  bottom: 0;
+  background-color: #F1C40F !important;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  pointer-events: none;
+  z-index: -1; /* Cambiado a un valor menor */
+  width: 100%;
+  height: 30px;
+}
+.link__popout--active{
+  left: -60%;
+  animation:150ms popOutAnimationOn ease-out;
+  padding-left: 10px !important;
+ 
+}
+.link__popout--desactivate{
+  left: 0%;
+  animation:150ms popOutAnimationOff ease-in-out;
+}
+
+
+
+/* Animacion Drop TOP */
+/* @keyframes popOutAnimationOn {  
+  0%{
+    width: 0%;
+    height: 0%;
+  }
+  33%{
+    width: 100%;
+    height: 0%;
+  }
+  100%{
+    width: 100%;
+    height: 30px;
+  }
+}
+
+@keyframes popOutAnimationOff{
+  0%{
+    width: 100%;
+    height: 30px;
+  }
+  33%{
+    height: 0px;
+    width: 100%;
+  }
+  100%{
+    width: 0%;
+    height: 0px;
+    display: none;
+  }
+} */
+
+
+/* Animacion Center-Left */
+@keyframes popOutAnimationOn{
+  from{
+    width: 45%;
+    left: 0%;
+  }
+  to{
+    width: 45%;
+    left: -40%;
+  }
+}
+
+@keyframes popOutAnimationOff {
+  0%{
+    left: -40%;
+  }
+  100%{
+    left: 0%;
+  }
+}
